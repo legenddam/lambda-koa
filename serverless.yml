@@ -13,7 +13,7 @@ provider:
 
 functions:
   api:
-    handler: src/server.handler
+    handler: src/api.handler
     events:
       - http:
           path: /

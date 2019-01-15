@@ -2,22 +2,28 @@ import Koa from 'koa';
 import serverless from 'serverless-http';
 import router from './router';
 
-const app = new Koa();
+export default class Server {
+  // app;
 
-app.use(router.routes())
-  .use(router.allowedMethods());
-  
-app.use((ctx) => {
-  ctx.body = 'Hello, World!';
-});
+  constructor() {
+    this.app = new Koa();
+    this.middleware();
+  }
 
-if (process.env.APP_ENV === 'local') {
-  app.listen(4000, (err) => {
-    if (err) {
-      return console.log(err);
-    }
-    console.log('Server is running on port 4000');
-  });
+  middleware() {
+    const { app } = this;
+    app.use(router.routes())
+      .use(router.allowedMethods());
+  }
+
+  listen(port) {
+    const { app } = this;
+    app.listen(port);
+    console.log('Listening on port', port);
+  }
+
+  serverless() {
+    const { app } = this;
+    return serverless(app);
+  }
 }
-
-export const handler = serverless(app);
