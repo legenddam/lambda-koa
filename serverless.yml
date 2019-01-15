@@ -7,16 +7,16 @@ plugins:
 
 provider:
   name: aws
-  runtime: nodejs6.10
+  runtime: nodejs8.10
   region: us-east-2
   stage: dev
   environment:
-    PG_HOST: 18.218.49.94
-    PG_USERNAME: postgres
-    PG_PASSWORD: PS_DB071238
-    PG_DATABASE: pw_prod
-    PG_PORT: 5432
-    PG_MAXPOOLS: 10
+    PG_HOST: ${env:PG_HOST}
+    PG_USERNAME: ${env:PG_USERNAME}
+    PG_PASSWORD: ${env:PG_PASSWORD}
+    PG_DATABASE: ${env:PG_DATABASE}
+    PG_PORT: ${env:PG_PORT}
+    PG_MAXPOOLS: ${env:PG_MAXPOOLS}
 
 functions:
   api:

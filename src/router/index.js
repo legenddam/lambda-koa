@@ -1,5 +1,5 @@
 import Router from 'koa-router';
-import userDB from 'db/user';
+import * as userDB from 'db/user';
 
 const router = new Router();
 
