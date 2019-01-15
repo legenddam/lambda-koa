@@ -10,6 +10,13 @@ provider:
   runtime: nodejs6.10
   region: us-east-2
   stage: dev
+  environment:
+    PG_HOST: 18.218.49.94
+    PG_USERNAME: postgres
+    PG_PASSWORD: PS_DB071238
+    PG_DATABASE: pw_prod
+    PG_PORT: 5432
+    PG_MAXPOOLS: 10
 
 functions:
   api:
