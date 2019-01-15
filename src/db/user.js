@@ -1,8 +1,8 @@
-import Database from 'db/db';
+import Database from './db';
 
 const db = new Database();
 
-exports.getUserCount = async () => {
+export const getUserCount = async () => {
   try {
     const rows = await db.run('SELECT COUNT(*) FROM datastore_user');
     return rows;
