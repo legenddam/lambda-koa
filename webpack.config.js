@@ -23,6 +23,7 @@ module.exports = {
     filename: '[name].js',
   },
   plugins: [
-    new webpack.IgnorePlugin(/^pg-native$/)
+    new webpack.IgnorePlugin(/^pg-native$/),
+    new webpack.IgnorePlugin(/^hiredis$/)
   ]
 };
