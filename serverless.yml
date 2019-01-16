@@ -17,6 +17,8 @@ provider:
     PG_DATABASE: ${env:PG_DATABASE}
     PG_PORT: ${env:PG_PORT}
     PG_MAXPOOLS: ${env:PG_MAXPOOLS}
+    REDIS_HOST: ${env:REDIS_HOST}
+    REDIS_PASSWORD: ${env:REDIS_PASSWORD}
 
 functions:
   api:
